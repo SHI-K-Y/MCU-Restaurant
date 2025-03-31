@@ -3,7 +3,7 @@
 @import "./tablet";
 @import "./mobile";
 @import "./desktop";
-:root  {
+:root {
   --body-color: rgba(27, 50, 71, 1);
   --logo-color: rgba(202, 186, 145);
   --text-color: rgba(233, 234, 236, 1);
@@ -197,6 +197,18 @@ h2 {
       font-size: 1rem;
     }
   }
+
+  .footer {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    order: 999; /* Ensures footer appears after other elements in flex layout */
+    align-self: stretch;
+  }
 }
 
 // Mobile styles
@@ -235,6 +247,12 @@ h2 {
     .result-container {
       padding: 0 0.5rem;
     }
+
+    .footer {
+      margin-top: 1.5rem;
+      padding: 1rem 0;
+      font-size: 0.8rem;
+    }
   }
 }
 
@@ -264,6 +282,10 @@ h2 {
         width: auto;
       }
     }
+
+    .footer {
+      max-width: 80%;
+    }
   }
 
   h2 {
@@ -285,6 +307,12 @@ h2 {
 
     .result-container {
       margin-top: 2rem;
+    }
+
+    .footer {
+      width: 100%;
+      margin-top: 2.5rem;
+      flex-basis: 100%; /* Ensures footer takes full width in flex container */
     }
   }
 }
