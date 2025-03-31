@@ -1,19 +1,54 @@
 ﻿Restaurant,Location,Gener,Price,Google Map
 源一自助餐,校內-一餐,自助餐,2,https://maps.app.goo.gl/4WmiudjkdLEYJU3KA
 二餐早餐店,校內-二餐,早餐,2,
-蘿西媽媽,德明路,早餐,2,https://maps.app.goo.gl/748nU2nfY17ksCQj9
-山東手工水餃館,德明路,飯類,3,https://maps.app.goo.gl/4yfY59gotScrFqUu9
-山東手工水餃館,德明路,水餃,3,https://maps.app.goo.gl/4yfY59gotScrFqUu9
-山東手工水餃館,德明路,麵類,3,https://maps.app.goo.gl/4yfY59gotScrFqUu9
+蘿西媽媽,校外周圍,早餐,2,https://maps.app.goo.gl/748nU2nfY17ksCQj9
+山東手工水餃館,校外周圍,麵類,3,https://maps.app.goo.gl/4yfY59gotScrFqUu9
+山東手工水餃館,校外周圍,飯類,3,https://maps.app.goo.gl/4yfY59gotScrFqUu9
+滑龍粥創新粥品,後街,粥類,2,https://maps.app.goo.gl/UwYcYfV1ddXhLvdT8
+山東手工水餃館,校外周圍,水餃,3,https://maps.app.goo.gl/4yfY59gotScrFqUu9
 源一滷味,校內-一餐,滷味,2,https://maps.app.goo.gl/4WmiudjkdLEYJU3KA
-里吉拿,德明路,義式料理,3,https://maps.app.goo.gl/4zaFKmJkoQ1w5tyo9
-哈堡堡輕食早午餐,德明路,早餐,3,https://maps.app.goo.gl/qQyFP3zvTcr5r2RPA
-Q Burger,德明路,早餐,3,https://maps.app.goo.gl/EafbMoCgsTVsrff69
+里吉拿,校外周圍,義式料理,3,https://maps.app.goo.gl/4zaFKmJkoQ1w5tyo9
+哈堡堡輕食早午餐,校外周圍,早餐,3,https://maps.app.goo.gl/qQyFP3zvTcr5r2RPA
+Q Burger,校外周圍,早餐,3,https://maps.app.goo.gl/EafbMoCgsTVsrff69
 傳承,校內-一餐,日式料理,3,https://maps.app.goo.gl/5PFk45hiWG88ytC96
 亂煮(二餐泡麵店),校內-二餐,麵類,2,
 運事通,校內-一餐,便當/快餐,2,
-玖號食堂,德明路,麵類,2,https://maps.app.goo.gl/FdugvsPk13RETBgU9
-玖號食堂,德明路,飯類,2,https://maps.app.goo.gl/FdugvsPk13RETBgU9
+玖號食堂,校外周圍,麵類,2,https://maps.app.goo.gl/FdugvsPk13RETBgU9
+玖號食堂,校外周圍,飯類,2,https://maps.app.goo.gl/FdugvsPk13RETBgU9
 水引麵鋪,校內-一餐,麵類,2,
-滑龍粥創新粥品,後街,粥類,2,https://maps.app.goo.gl/UwYcYfV1ddXhLvdT8
 老客馥粥品,後街,粥類,2,https://maps.app.goo.gl/JsG9wkY1Hr51zGL59
+心悅食典-一餐,校內-一餐,自助餐,3,
+心悅食典-二餐,校內-二餐,自助餐,3,
+風語餐坊,校內-一餐,義式料理,3,
+日式魔法屋,校外周圍,日式料理,3,https://maps.app.goo.gl/tvmDXnmHnjH3WgeR9
+FREEDAY,校外周圍,義式料理,3,https://maps.app.goo.gl/SUn4qPk3k5PyjZfG6
+拉亞漢堡,校外周圍,早餐,3,https://maps.app.goo.gl/FLn2tEsWrvzpme569
+鬼匠拉麵,校外周圍,麵類,3,https://maps.app.goo.gl/G3CcrKMWyBNhSyg38
+鬼匠拉麵,校外周圍,拉麵,3,https://maps.app.goo.gl/G3CcrKMWyBNhSyg38
+鬼匠拉麵,校外周圍,日式料理,3,https://maps.app.goo.gl/G3CcrKMWyBNhSyg38
+11番町豚骨拉麵,校外周圍,日式料理,3,https://maps.app.goo.gl/oE5tU8qJzcfo67pv5
+11番町豚骨拉麵,校外周圍,拉麵,3,https://maps.app.goo.gl/oE5tU8qJzcfo67pv5
+11番町豚骨拉麵,校外周圍,麵類,3,https://maps.app.goo.gl/oE5tU8qJzcfo67pv5
+11番町豚骨拉麵,校外周圍,飯類,3,https://maps.app.goo.gl/oE5tU8qJzcfo67pv5
+小判 拉麵專門店,校外周圍,拉麵,3,https://maps.app.goo.gl/ttq69h7ngPW1q7bM9
+醇滷味銘傳店,校外周圍,滷味,3,https://maps.app.goo.gl/Fkys3GU5qkKFEuRs5
+大呼過癮臭臭鍋,校外周圍,小火鍋,3,https://maps.app.goo.gl/wJPPpRmPuQQnPYDeA
+鍋兒滾-銘傳店,校外周圍,小火鍋,3,https://maps.app.goo.gl/51yq9UfX8gwg3JZc8
+8鍋臭臭鍋,後街,小火鍋,3,https://maps.app.goo.gl/XpDkaVLsZE9LsYEx7
+韓歐尼 銘傳店,校外周圍,韓式料理,3,https://maps.app.goo.gl/93hAzQeN9VzLmget6
+泰式Thai food,校外周圍,泰式料理,3,https://maps.app.goo.gl/9cEZtJ5P5carti7V6
+濃 咖哩屋 Luscious Curry,校外周圍,飯類,3,https://maps.app.goo.gl/LcpQrrfYnJBac9Sh9
+陸食玖早午餐,校外周圍,早餐,2,https://maps.app.goo.gl/1ikRcPdNiSVFw8hH7
+皇將麻辣臭豆腐,校外周圍,中式料理,3,https://maps.app.goo.gl/KPXWy91FM9ScR4gp7
+元氣啵比,校外周圍,早餐,2,https://maps.app.goo.gl/yP6mmNi2SNAWrgP36
+八哥重慶酸辣粉,校外周圍,麵類,3,https://maps.app.goo.gl/CiuoCkFzSGyYoyhF6
+八哥重慶酸辣粉,校外周圍,中式料理,3,https://maps.app.goo.gl/CiuoCkFzSGyYoyhF6
+大台北阿松的店,校外周圍,麵類,3,https://maps.app.goo.gl/GyCTxV1trhrhgyPU6
+大台北阿松的店,校外周圍,飯類,3,https://maps.app.goo.gl/GyCTxV1trhrhgyPU6
+韓奶奶 韓式滷味 ,校外周圍,韓式料理,3,https://maps.app.goo.gl/W61X2kYms8McoXip6
+韓奶奶 韓式滷味 ,校外周圍,滷味,3,https://maps.app.goo.gl/W61X2kYms8McoXip6
+滷味庭 加熱滷味 三杯滷味,校外周圍,滷味,3,https://maps.app.goo.gl/xFBi7h1ksoynw6tx9
+京采日式飯館,校外周圍,日式料理,3,https://maps.app.goo.gl/n3jKadcf5hgemyas8
+泰皇泰式料理,校外周圍,泰式料理,3,https://maps.app.goo.gl/LDy8FXjZzXjzWb3i8
+東東的店自助餐,校外周圍,自助餐,3,https://maps.app.goo.gl/5GGkARLiZUiMWuWT6
+大姆指精緻涮涮鍋,校外周圍,小火鍋,3,https://maps.app.goo.gl/14zvTsfqSNs9cyECA
