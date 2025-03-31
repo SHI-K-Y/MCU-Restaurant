@@ -42,6 +42,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // 獲取所有不重複的位置
     const locations = [...new Set(restaurants.map((r) => r.Location))].filter(Boolean);
 
+    // 清空現有選項，保留「請選擇」選項
+    categorySelect.innerHTML = '<option value="default" class="options">請選擇</option>';
+    locationSelect.innerHTML = '<option value="default" class="options">請選擇</option>';
+
+    // 添加「隨機」選項
+    const randomOptionCategory = document.createElement("option");
+    randomOptionCategory.value = "random";
+    randomOptionCategory.textContent = "隨機";
+    categorySelect.appendChild(randomOptionCategory);
+
+    const randomOptionLocation = document.createElement("option");
+    randomOptionLocation.value = "random";
+    randomOptionLocation.textContent = "隨機";
+    locationSelect.appendChild(randomOptionLocation);
+
     // 填充分類下拉選單
     categories.forEach((category) => {
       const option = document.createElement("option");
@@ -64,11 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // 根據選擇的條件篩選餐廳
     let filteredRestaurants = [...restaurants];
 
-    if (category !== "default") {
+    // 如果類別不是「隨機」或「請選擇」，則篩選符合該類別的餐廳
+    if (category !== "random" && category !== "default") {
       filteredRestaurants = filteredRestaurants.filter((r) => r.Gener === category);
     }
 
-    if (location !== "default") {
+    // 如果位置不是「隨機」或「請選擇」，則篩選符合該位置的餐廳
+    if (location !== "random" && location !== "default") {
       filteredRestaurants = filteredRestaurants.filter((r) => r.Location === location);
     }
 
