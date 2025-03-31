@@ -1,0 +1,144 @@
+document.addEventListener("DOMContentLoaded", () => {
+  // 存儲餐廳資料的陣列
+  let restaurants = [];
+
+  // 從CSV檔案讀取資料
+  async function loadRestaurants() {
+    try {
+      const response = await fetch("./assets/data.csv");
+      const data = await response.text();
+
+      // 解析CSV資料
+      const rows = data.split("\n").filter((row) => row.trim() && !row.startsWith("//"));
+      const headers = rows[0].split(",");
+
+      // 將資料轉換成陣列物件
+      restaurants = rows.slice(1).map((row) => {
+        const values = row.split(",");
+        const restaurant = {};
+        headers.forEach((header, index) => {
+          restaurant[header.trim()] = values[index]?.trim() || "";
+        });
+        return restaurant;
+      });
+
+      // 填充下拉選單
+      populateDropdowns();
+
+      console.log("載入餐廳資料:", restaurants);
+    } catch (error) {
+      console.error("載入餐廳資料失敗:", error);
+    }
+  }
+
+  // 填充下拉選單
+  function populateDropdowns() {
+    const categorySelect = document.getElementById("category");
+    const locationSelect = document.getElementById("location");
+
+    // 獲取所有不重複的分類
+    const categories = [...new Set(restaurants.map((r) => r.Gener))].filter(Boolean);
+
+    // 獲取所有不重複的位置
+    const locations = [...new Set(restaurants.map((r) => r.Location))].filter(Boolean);
+
+    // 填充分類下拉選單
+    categories.forEach((category) => {
+      const option = document.createElement("option");
+      option.value = category;
+      option.textContent = category;
+      categorySelect.appendChild(option);
+    });
+
+    // 填充位置下拉選單
+    locations.forEach((location) => {
+      const option = document.createElement("option");
+      option.value = location;
+      option.textContent = location;
+      locationSelect.appendChild(option);
+    });
+  }
+
+  // 隨機選擇餐廳
+  function selectRandomRestaurant(category, location) {
+    // 根據選擇的條件篩選餐廳
+    let filteredRestaurants = [...restaurants];
+
+    if (category !== "default") {
+      filteredRestaurants = filteredRestaurants.filter((r) => r.Gener === category);
+    }
+
+    if (location !== "default") {
+      filteredRestaurants = filteredRestaurants.filter((r) => r.Location === location);
+    }
+
+    // 如果沒有符合條件的餐廳
+    if (filteredRestaurants.length === 0) {
+      return null;
+    }
+
+    // 隨機選擇一家餐廳
+    const randomIndex = Math.floor(Math.random() * filteredRestaurants.length);
+    return filteredRestaurants[randomIndex];
+  }
+
+  // 處理表單提交事件
+  document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const categorySelect = document.getElementById("category");
+    const locationSelect = document.getElementById("location");
+
+    const category = categorySelect.value;
+    const location = locationSelect.value;
+
+    // 選擇隨機餐廳
+    const selectedRestaurant = selectRandomRestaurant(category, location);
+
+    // 顯示結果
+    showResult(selectedRestaurant);
+  });
+
+  // 顯示結果
+  function showResult(restaurant) {
+    // 檢查是否已有結果容器，如果有則移除
+    let resultContainer = document.querySelector(".result-container");
+    if (resultContainer) {
+      resultContainer.remove();
+    }
+
+    // 創建結果容器
+    resultContainer = document.createElement("div");
+    resultContainer.className = "result-container";
+
+    if (restaurant) {
+      // 創建結果卡片
+      const resultCard = document.createElement("div");
+      resultCard.className = "result-card";
+
+      // 添加餐廳資訊
+      resultCard.innerHTML = `
+        <h3>${restaurant.Restaurant}</h3>
+        <p>類別: ${restaurant.Gener}</p>
+        <p>位置: ${restaurant.Location}</p>
+        <p>價格: ${"$".repeat(parseInt(restaurant.Price) || 1)}</p>
+        ${restaurant["Google Map"] ? `<a href="${restaurant["Google Map"]}" target="_blank" class="map-link">在Google地圖中檢視</a>` : ""}
+      `;
+
+      resultContainer.appendChild(resultCard);
+    } else {
+      // 沒有符合條件的餐廳
+      resultContainer.innerHTML = `
+        <div class="no-result">
+          <p>沒有符合條件的餐廳</p>
+        </div>
+      `;
+    }
+
+    // 添加到主容器中
+    document.querySelector(".main").appendChild(resultContainer);
+  }
+
+  // 載入資料
+  loadRestaurants();
+});

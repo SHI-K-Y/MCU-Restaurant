@@ -94,3 +94,67 @@ h2 {
     }
   }
 }
+.main {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 120px;
+  flex-wrap: wrap;
+
+  .result-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .result-card {
+      background-color: var(--first-color);
+      border: solid 1px none;
+      padding: 20px;
+      border-radius: 10px;
+      width: 550px;
+      min-height: 150px;
+      text-align: center;
+      color: var(--text-color);
+
+      h3 {
+        color: var(--logo-color);
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 18px;
+        margin: 8px 0;
+      }
+
+      .map-link {
+        display: inline-block;
+        background-color: var(--logo-color);
+        color: var(--black-color);
+        padding: 8px 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+
+    .no-result {
+      background-color: var(--first-color);
+      border: solid 1px none;
+      padding: 20px;
+      border-radius: 10px;
+      width: 550px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-color);
+      font-size: 20px;
+    }
+  }
+}
