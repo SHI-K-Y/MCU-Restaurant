@@ -1,59 +1,43 @@
-// filepath: c:\Users\shiku\Desktop\Web\MCU-Restaurant\src\scss\_desktop.scss
-@media (min-width: 1024px) {
-  body {
-    font-size: 18px;
-  }
-
+// Desktop styles
+@media (min-width: 1025px) {
   .main {
-    margin: 40px 120px;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
-    .intro {
-      .card {
-        width: 600px;
-        height: 150px;
-      }
+    .intro,
+    .form {
+      width: 45%;
     }
 
     .form {
-      .bar {
-        width: 600px;
-        height: 120px;
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
       }
 
-      form {
-        gap: 16px;
+      label {
+        margin-right: 0.5rem;
       }
 
       .category,
       .location {
-        width: 200px;
+        width: auto;
+        margin-bottom: 0;
       }
 
       .search {
-        padding: 10px 20px;
+        margin: 0.5rem auto 0;
+        width: auto;
+        display: block;
       }
     }
 
     .result-container {
-      .result-card {
-        width: 600px;
-        min-height: 200px;
-
-        h3 {
-          font-size: 32px;
-        }
-
-        p {
-          font-size: 20px;
-        }
-      }
-
-      .no-result {
-        width: 600px;
-        min-height: 120px;
-        font-size: 22px;
-      }
+      margin-top: 2rem;
     }
   }
 }

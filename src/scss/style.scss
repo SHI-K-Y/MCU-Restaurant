@@ -1,7 +1,9 @@
 @import "./variables";
 @import "./mixins";
-
-:root {
+@import "./tablet";
+@import "./mobile";
+@import "./desktop";
+:root  {
   --body-color: rgba(27, 50, 71, 1);
   --logo-color: rgba(202, 186, 145);
   --text-color: rgba(233, 234, 236, 1);
