@@ -1,0 +1,59 @@
+// filepath: c:\Users\shiku\Desktop\Web\MCU-Restaurant\src\scss\_desktop.scss
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  .main {
+    margin: 40px 120px;
+    flex-wrap: nowrap;
+
+    .intro {
+      .card {
+        width: 600px;
+        height: 150px;
+      }
+    }
+
+    .form {
+      .bar {
+        width: 600px;
+        height: 120px;
+      }
+
+      form {
+        gap: 16px;
+      }
+
+      .category,
+      .location {
+        width: 200px;
+      }
+
+      .search {
+        padding: 10px 20px;
+      }
+    }
+
+    .result-container {
+      .result-card {
+        width: 600px;
+        min-height: 200px;
+
+        h3 {
+          font-size: 32px;
+        }
+
+        p {
+          font-size: 20px;
+        }
+      }
+
+      .no-result {
+        width: 600px;
+        min-height: 120px;
+        font-size: 22px;
+      }
+    }
+  }
+}

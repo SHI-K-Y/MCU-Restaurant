@@ -1,0 +1,38 @@
+// filepath: c:\Users\shiku\Desktop\Web\MCU-Restaurant\src\scss\_mixins.scss
+
+// Responsive mixin for flexbox layout
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Responsive mixin for grid layout
+@mixin grid($columns, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Mixin for responsive font size
+@mixin responsive-font($min-size, $max-size) {
+  font-size: $min-size;
+
+  @media (min-width: 600px) {
+    font-size: calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - 600px) / (1200 - 600)));
+  }
+
+  @media (min-width: 1200px) {
+    font-size: $max-size;
+  }
+}
+
+// Mixin for box shadow
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+// Mixin for transition
+@mixin transition($property, $duration, $timing-function: ease) {
+  transition: $property $duration $timing-function;
+}

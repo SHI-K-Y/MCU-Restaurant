@@ -1,0 +1,19 @@
+:root {
+  --body-color: rgba(27, 50, 71, 1);
+  --logo-color: rgba(202, 186, 145);
+  --text-color: rgba(233, 234, 236, 1);
+  --white-color: rgba(255, 255, 255, 1);
+  --black-color: rgba(0, 0, 0, 1);
+  --first-color: rgba(68, 101, 123);
+
+  // Font variables
+  --font-family: "Arial, sans-serif";
+  --font-size-base: 16px;
+  --font-size-large: 20px;
+  --font-size-small: 14px;
+
+  // Breakpoints for responsive design
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+}

@@ -1,0 +1,51 @@
+// filepath: c:\Users\shiku\Desktop\Web\MCU-Restaurant\src\scss\_tablet.scss
+@import "./variables";
+@import "./mixins";
+
+.main {
+  margin: 20px 60px;
+
+  .intro {
+    .card {
+      width: 100%;
+      height: auto;
+      margin: 0 5px 10px;
+    }
+  }
+
+  .form {
+    .bar {
+      width: 100%;
+      height: auto;
+      padding: 15px;
+    }
+
+    form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .category,
+    .location {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .search {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+
+  .result-container {
+    .result-card {
+      width: 100%;
+      min-height: 200px;
+    }
+
+    .no-result {
+      width: 100%;
+      min-height: 150px;
+    }
+  }
+}
