@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 從CSV檔案讀取資料
   async function loadRestaurants() {
     try {
-      const response = await fetch("./assets/data.csv");
+      const response = await fetch("./assets/data/data.csv");
       const data = await response.text();
 
       // 解析CSV資料
