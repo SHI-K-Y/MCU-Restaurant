@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>類別: ${restaurant.Gener}</p>
         <p>位置: ${restaurant.Location}</p>
         <p>價格: ${"$".repeat(parseInt(restaurant.Price) || 1)}</p>
-        ${restaurant["Google Map"] ? `<a href="${restaurant["Google Map"]}" target="_blank" class="map-link">在Google地圖中檢視</a>` : ""}
+        ${restaurant["Google Map"] ? `<a href="${restaurant["Google Map"]}" target="_blank" class="map-link">在 Google Map 中檢視</a>` : ""}
       `;
 
       resultContainer.appendChild(resultCard);
