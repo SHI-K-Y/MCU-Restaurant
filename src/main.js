@@ -132,6 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // 創建結果卡片
       const resultCard = document.createElement("div");
       resultCard.className = "result-card";
+      // 添加動畫屬性
+      resultCard.setAttribute("data-aos", "flip-up");
+      resultCard.setAttribute("data-aos-duration", "800");
 
       // 添加餐廳資訊
       resultCard.innerHTML = `
@@ -145,15 +148,21 @@ document.addEventListener("DOMContentLoaded", () => {
       resultContainer.appendChild(resultCard);
     } else {
       // 沒有符合條件的餐廳
-      resultContainer.innerHTML = `
-        <div class="no-result">
-          <p>沒有符合條件的餐廳</p>
-        </div>
-      `;
+      const noResult = document.createElement("div");
+      noResult.className = "no-result";
+      // 添加動畫屬性
+      noResult.setAttribute("data-aos", "flip-up");
+      noResult.setAttribute("data-aos-duration", "800");
+
+      noResult.innerHTML = `<p>沒有符合條件的餐廳</p>`;
+      resultContainer.appendChild(noResult);
     }
 
     // 添加到主容器中
     document.querySelector(".main").appendChild(resultContainer);
+
+    // 重新初始化 AOS 以應用新添加元素的動畫
+    AOS.refresh();
   }
 
   // 載入資料
