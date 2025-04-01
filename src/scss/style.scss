@@ -164,6 +164,7 @@ h2 {
       min-height: 150px;
       text-align: center;
       color: var(--text-color);
+      box-shadow: 1px 8px 10px 2px var(--black-color);
 
       h3 {
         color: var(--logo-color);
@@ -187,6 +188,7 @@ h2 {
         margin-top: 0.75rem;
         text-decoration: none;
         font-weight: bold;
+        box-shadow: 0.8px 0.8px 5px 0.5px var(--black-color);
 
         &:hover {
           opacity: 0.9;
@@ -207,6 +209,7 @@ h2 {
       justify-content: center;
       color: var(--text-color);
       font-size: 1rem;
+      box-shadow: 1px 8px 10px 2px var(--black-color);
     }
   }
 
