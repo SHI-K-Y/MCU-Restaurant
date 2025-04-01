@@ -85,16 +85,16 @@ h2 {
 
     .bar {
       background-color: var(--first-color);
-      border: none;
+      border: solid 1px none;
       width: 100%;
       padding: 1.25rem;
       border-radius: 10px;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      text-align: left;
       color: var(--text-color);
-      height: 150px; // Match the intro card height
+      height: 150px;
       min-height: 150px;
       box-shadow: 1px 8px 10px 2px var(--black-color);
     }
@@ -355,17 +355,20 @@ h2 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: flex-start; // Make sure items start at the same vertical position
 
     .intro,
     .form {
       width: 45%;
-      height: 100%;
+      margin-top: 0; // Reset any top margins
+      display: flex; // Ensure both containers use flex
     }
 
     .intro .card,
     .form .bar {
       height: 180px;
       min-height: 180px;
+      align-self: flex-start; // Align to the top
     }
 
     .result-container {
