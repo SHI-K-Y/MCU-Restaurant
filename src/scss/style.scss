@@ -368,14 +368,16 @@ h2 {
 
     .result-container .result-card,
     .result-container .no-result {
-      height: 180px;
       min-height: 180px;
+      height: auto;
+      max-height: none;
+      overflow: visible;
     }
 
     .footer {
       width: 100%;
       margin-top: 2.5rem;
-      flex-basis: 100%; /* Ensures footer takes full width in flex container */
+      flex-basis: 100%;
     }
   }
 }
