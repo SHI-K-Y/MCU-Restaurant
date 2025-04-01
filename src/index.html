@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
     <title>MCU 餐廳選擇器</title>
   </head>
   <body>
@@ -12,14 +13,14 @@
     </div>
     <div class="main">
       <div class="intro">
-        <div class="card">
+        <div class="card" data-aos="fade-down-right" data-aos-delay="80">
           <div class="text">你是不是有選擇障礙不知道現在要吃什麼嗎 ?</div>
           <div class="text">選擇你想吃什麼風格、要去哪吃，或是全交由命運來決定</div>
           <div class="text">看看待會要吃什麼吧 !</div>
         </div>
       </div>
       <div class="form">
-        <div class="bar">
+        <div class="bar" data-aos="flip-left" data-aos-delay="80">
           <form action="">
             <div class="form-group">
               <label for="category">餐廳類別：</label>
@@ -35,6 +36,7 @@
       </div>
       <div class="footer">Copyright &copy; 2025 Kunyan Shi</div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>

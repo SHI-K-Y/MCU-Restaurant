@@ -159,3 +159,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // 載入資料
   loadRestaurants();
 });
+AOS.init({
+  duration: 800,
+  once: true,
+  offset: 100,
+});
