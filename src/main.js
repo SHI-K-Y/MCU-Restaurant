@@ -139,9 +139,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // 添加餐廳資訊
       resultCard.innerHTML = `
         <h3>${restaurant.Restaurant}</h3>
-        <p>類別: ${restaurant.Gener}</p>
-        <p>位置: ${restaurant.Location}</p>
-        <p>價格: ${"$".repeat(parseInt(restaurant.Price) || 1)}</p>
+        <p>類別 : ${restaurant.Gener}</p>
+        <p>位置 : ${restaurant.Location}</p>
+        <p>價格 : ${"$".repeat(parseInt(restaurant.Price) || 1)}</p>
         ${restaurant["Google Map"] ? `<a href="${restaurant["Google Map"]}" target="_blank" class="map-link">在 Google Map 中檢視</a>` : ""}
       `;
 
