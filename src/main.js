@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   // 存儲餐廳資料的陣列
   let restaurants = [];
+  // 存儲合併後的餐廳資料
+  let uniqueRestaurants = [];
 
   // 從CSV檔案讀取資料
   async function loadRestaurants() {
@@ -22,13 +24,45 @@ document.addEventListener("DOMContentLoaded", () => {
         return restaurant;
       });
 
+      // 合併相同餐廳的資料
+      mergeRestaurantData();
+
       // 填充下拉選單
       populateDropdowns();
 
       console.log("載入餐廳資料:", restaurants);
+      console.log("合併後的餐廳資料:", uniqueRestaurants);
     } catch (error) {
       console.error("載入餐廳資料失敗:", error);
     }
+  }
+
+  // 合併相同餐廳的資料
+  function mergeRestaurantData() {
+    // 用於存儲合併後的餐廳資料的物件
+    const restaurantMap = new Map();
+
+    // 遍歷所有餐廳資料
+    restaurants.forEach((restaurant) => {
+      const key = `${restaurant.Restaurant}-${restaurant.Location}`;
+
+      if (!restaurantMap.has(key)) {
+        // 若該餐廳尚未加入 Map，則新增一筆資料
+        restaurantMap.set(key, {
+          ...restaurant,
+          AllGeners: [restaurant.Gener], // 創建一個包含所有類別的陣列
+        });
+      } else {
+        // 若該餐廳已存在，則更新類別陣列
+        const existingRestaurant = restaurantMap.get(key);
+        if (!existingRestaurant.AllGeners.includes(restaurant.Gener)) {
+          existingRestaurant.AllGeners.push(restaurant.Gener);
+        }
+      }
+    });
+
+    // 將 Map 轉換為陣列
+    uniqueRestaurants = Array.from(restaurantMap.values());
   }
 
   // 填充下拉選單
@@ -40,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const categories = [...new Set(restaurants.map((r) => r.Gener))].filter(Boolean);
 
     // 獲取所有不重複的位置
-    const locations = [...new Set(restaurants.map((r) => r.Location))].filter(Boolean);
+    const locations = [...new Set(uniqueRestaurants.map((r) => r.Location))].filter(Boolean);
 
     // 清空現有選項，保留「請選擇」選項
     categorySelect.innerHTML = '<option value="default" class="options">請選擇</option>';
@@ -77,11 +111,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // 隨機選擇餐廳
   function selectRandomRestaurant(category, location) {
     // 根據選擇的條件篩選餐廳
-    let filteredRestaurants = [...restaurants];
+    let filteredRestaurants = [...uniqueRestaurants];
 
     // 如果類別不是「隨機」或「請選擇」，則篩選符合該類別的餐廳
     if (category !== "random" && category !== "default") {
-      filteredRestaurants = filteredRestaurants.filter((r) => r.Gener === category);
+      filteredRestaurants = filteredRestaurants.filter((r) => r.AllGeners.includes(category));
     }
 
     // 如果位置不是「隨機」或「請選擇」，則篩選符合該位置的餐廳
@@ -136,10 +170,10 @@ document.addEventListener("DOMContentLoaded", () => {
       resultCard.setAttribute("data-aos", "flip-up");
       resultCard.setAttribute("data-aos-duration", "800");
 
-      // 添加餐廳資訊
+      // 添加餐廳資訊，顯示所有類別
       resultCard.innerHTML = `
         <h3>${restaurant.Restaurant}</h3>
-        <p>類別 : ${restaurant.Gener}</p>
+        <p>類別 : ${restaurant.AllGeners.join(", ")}</p>
         <p>位置 : ${restaurant.Location}</p>
         <p>價格 : ${"$".repeat(parseInt(restaurant.Price) || 1)}</p>
         ${restaurant["Google Map"] ? `<a href="${restaurant["Google Map"]}" target="_blank" class="map-link">在 Google Map 中檢視</a>` : ""}
